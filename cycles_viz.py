@@ -111,7 +111,8 @@ p.add_tools(HoverTool(show_arrow=False, line_policy='next', tooltips=[
     ('Weed Fraction', '@weed_fraction')
 ]))
 
-p.legend.location = "bottom_right"
+p.legend.location = "top_left"
+p.legend.title = 'Weed Fraction'
     
 xaxis = LinearAxis()
 #p.add_layout(xaxis, 'below')
