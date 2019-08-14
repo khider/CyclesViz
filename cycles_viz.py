@@ -25,11 +25,11 @@ import configparser
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-if 'maize_file' in config['default']:
-    maize_file = config['default']['maize_file']
+if 'maize_file' in config['cycles']:
+    maize_file = config['cycles']['maize_file']
 
-if 'sorghum_file' in config['default']:
-    sorghum_file = config['default']['sorghum_file']
+if 'sorghum_file' in config['cycles']:
+    sorghum_file = config['cycles']['sorghum_file']
 
 def update_all(attr,old,new):
     # Get values for everything
