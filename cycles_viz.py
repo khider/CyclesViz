@@ -19,6 +19,17 @@ from math import pi
 from bokeh.transform import cumsum
 from bokeh.models.widgets import Div, Paragraph, Dropdown
 import numpy as np
+import configparser
+
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+if 'maize_file' in config['default']:
+    maize_file = config['default']['maize_file']
+
+if 'sorghum_file' in config['default']:
+    sorghum_file = config['default']['sorghum_file']
 
 def update_all(attr,old,new):
     # Get values for everything
@@ -66,9 +77,9 @@ def update_all(attr,old,new):
 
 #Get the data
 global sorghum_data
-sorghum_data = pd.read_csv('sorghum.csv')
+sorghum_data = pd.read_csv(sorghum_file)
 global maize_data
-maize_data = pd.read_csv('maize.csv')
+maize_data = pd.read_csv(maize_file)
 # Get a loc to get started
 loc = sorghum_data['location'].unique()
 #filter a little bit for the first cut
